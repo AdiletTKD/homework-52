@@ -6,29 +6,24 @@ interface ICardViewProps {
     suit: string;
 }
 
-const CardView: React.FC<ICardViewProps> = props => {
-    const cardClasses = `card ${props.rank} ${props.suit}`
-
-    if (props.suit = 'diams') {
-        '♦'
-    } else if (props.suit = 'hearts') {
-        '♥'
-    } else if (props.suit = 'clubs') {
-        '♣'
-    } else {
-        '♠'
+const CardView: React.FC<ICardViewProps> = ({rank, suit}) => {
+    const suitSymbol: { [key: string]: string } = {
+        diams: '♦',
+        hearts: '♥',
+        clubs: '♣',
+        spades: '♠'
     }
- 
+  
     return (
         <div className="CardView">
             <div className="playingCards faceImages">
-                <span className={cardClasses}>
-                    <span className="rank"> {props.rank} </span>
-                    <span className="suit"> {props.suit} </span>
+                <span className={`card card-${rank} ${suit}`}>
+                    <span className="rank"> {rank.toUpperCase()} </span>
+                    <span className="suit"> {suitSymbol[suit]} </span>
                 </span>
             </div>
         </div>
-    )
+    );
 };
 
 export default CardView;
