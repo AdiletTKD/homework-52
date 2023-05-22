@@ -15,14 +15,10 @@ const CardView: React.FC<ICardViewProps> = ({rank, suit}) => {
     }
   
     return (
-        <div className="CardView">
-            <div className="playingCards faceImages">
-                <span className={`card card-${rank} ${suit}`}>
-                    <span className="rank"> {rank} </span>
-                    <span className="suit"> {suitSymbol[suit]} </span>
-                </span>
-            </div>
-        </div>
+        <span className={`card card-${rank.toLowerCase()} ${suit}`}>
+            <span className="rank"> {rank} </span>
+            <span className="suit"> {suitSymbol[suit]} </span>
+        </span>
     );
 };
 
