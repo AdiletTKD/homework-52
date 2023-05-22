@@ -18,7 +18,7 @@ const CardView: React.FC<ICardViewProps> = ({rank, suit}) => {
         <div className="CardView">
             <div className="playingCards faceImages">
                 <span className={`card card-${rank} ${suit}`}>
-                    <span className="rank"> {rank.toUpperCase()} </span>
+                    <span className="rank"> {rank} </span>
                     <span className="suit"> {suitSymbol[suit]} </span>
                 </span>
             </div>

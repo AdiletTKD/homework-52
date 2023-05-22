@@ -26,7 +26,7 @@ class CardDeck {
     getCards(howMany: number): Card[] {
         const сards: Card[] = [];
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < howMany; i++) {
             const card = this.getCard();
             сards.push(card);
         }
